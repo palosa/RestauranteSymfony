@@ -1,0 +1,33 @@
+{% extends '::base2.html.twig' %}
+{% block title %}Tapas{% endblock %}
+{% block body %}
+ <h3>Tapas Restaurante</h3>
+ <table class="table table-striped table-inverse">
+   <tr>
+     <th>Nombre</th>
+     <th>Descripcion</th>
+     <th>Precio</th>
+     <th>Foto</th>
+   </tr>
+   {% for tapas in tablaTapas %}
+   <tr>
+     <td>{{ tapas.nombre }}</td>
+     <td>{{ tapas.descripcion }}</td>
+     <td>{{ tapas.precio }}</td>
+     <td>{{ tapas.foto }}</td>
+     <td><a href="{{path(
+      'restaurante_mostrarId',
+     { 'id': tapas.id}
+   )}} ">mostrar</a></td>
+     <td><a href="{{path(
+      'restaurante_mod',
+     { 'id': tapas.id}
+   )}} ">Actualizar</a></td>
+   <td><a href="{{path(
+    'restaurante_delete',
+   { 'id': tapas.id}
+ )}} ">Eliminar</a></td>
+   </tr>
+   {% endfor %}
+ </table>
+{% endblock %}

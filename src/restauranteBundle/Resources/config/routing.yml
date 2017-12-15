@@ -1,0 +1,18 @@
+restaurante_homepage:
+    path:     /
+    defaults: { _controller: restauranteBundle:Default:index }
+restaurante_mostrar:
+    path:     /mostrar
+    defaults: { _controller: restauranteBundle:Tapas:tapasMostrar }
+restaurante_mostrarId:
+    path:     /mostrarId/{id}
+    defaults: { _controller: restauranteBundle:Tapas:tapaId }
+restaurante_insertar:
+    path:     /insertar
+    defaults: { _controller: restauranteBundle:Tapas:crearTapa }
+restaurante_mod:
+    path:     /modificar/{id}
+    defaults: { _controller: restauranteBundle:Tapas:actualizarTapa }
+restaurante_delete:
+    path:     /delete/{id}
+    defaults: { _controller: restauranteBundle:Tapas:eliminarTapa }

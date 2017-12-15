@@ -1,0 +1,19 @@
+{% extends '::base2.html.twig' %}
+{% block title %}Tapas{% endblock %}
+{% block body %}
+ <h3>Tapa Restaurante</h3>
+ <table class="table table-striped table-inverse">
+   <tr>
+     <th>Nombre</th>
+     <th>Descripcion</th>
+     <th>Precio</th>
+     <th>Foto</th>
+   </tr>
+   <tr>
+     <td>{{ id.nombre }}</td>
+     <td>{{ id.descripcion }}</td>
+     <td>{{ id.precio }}</td>
+     <td>{{ id.foto }}</td>
+  </tr>
+ </table>
+{% endblock %}

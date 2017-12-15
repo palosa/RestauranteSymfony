@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/one-page-wonder.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock %}
+
+    </head>
+
+    <body>
+
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{ path('restaurante_homepage') }}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('restaurante_mostrar') }}">Carta de tapas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('restaurante_insertar') }}">Insertar Tapa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+     <div class="overlay">
+       <div class="container">
+         <h1 class="display-1 text-white">Tapeo Speed</h1>
+         <h2 class="display-4 text-white">Rock Your Tapeo</h2>
+       </div>
+     </div>
+   </header>
+        <!-- Footer -->
+   <footer class="py-5 bg-dark">
+     <div class="container">
+       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+     </div>
+     <!-- /.container -->
+   </footer>
+   {% block body %}
+   {% endblock %}
+        {% block javascripts %}
+        <script src="{{ asset('css/jquery.min.js') }}"></script>
+        <script src="{{ asset('css/boostrap.bundle.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
