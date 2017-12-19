@@ -1,8 +1,10 @@
 <?php
 
+
 namespace restauranteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * tapas
@@ -12,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class tapas
 {
+
     /**
      * @var int
      *
@@ -25,6 +28,12 @@ class tapas
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=128)
+     * @Assert\Length(
+     *
+     *      max = 128,
+     *
+     *      maxMessage = "no puede tener mas de  {{ limit }} caracteres"
+     * )
      */
     private $nombre;
 
@@ -46,6 +55,12 @@ class tapas
      * @var float
      *
      * @ORM\Column(name="precio", type="float")
+     * @Assert\Range(
+     *      min = 0,
+     *
+     *      minMessage = "El precio tiene que ser mayor que {{ limit }} €",
+     *
+     * )
      */
     private $precio;
 
@@ -187,4 +202,3 @@ class tapas
         return $this->foto;
     }
 }
-
